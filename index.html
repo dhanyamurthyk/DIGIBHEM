@@ -6,7 +6,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width-device-width,initial-scale=1.0">
     <title>Hotel Registration Form</title>
-    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia';
+        }
+
+        body {
+            background-image: url('image2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia';
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 27px;
+            border-radius: 8px;
+            background-color: #4070f4;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .fields {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .input-field {
+            width: calc(50% - 15px);
+            margin: 10px 0;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2e2e2e;
+        }
+
+        input,
+        select {
+            font-size: 14px;
+            color: #333;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            padding: 10px;
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        input[type="date"] {
+            color: #707070;
+        }
+
+        input[type="date"]:valid {
+            color: #333;
+        }
+
+        .checkbox {
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox input {
+            margin-right: 8px;
+        }
+
+        .form-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4070f4;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .amount {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+    </style>
 </head>
 
 <body>
