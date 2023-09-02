@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <title>Hotel Registration Form</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <header>Taj Lake Palace Registration</header>
+        <form id="register">
+            <div class="details">
+                <span class="title">Customer Information</span>
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="name">Customer Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Your Name">
+                    </div>
+                    <div class="input-field">
+                        <label for="check-in-date">Check-in Date:</label>
+                        <input type="date" id="check-in-date" name="check-in-date">
+                    </div>
+                    <div class="input-field">
+                        <label for="total-days">Total No of Days:</label>
+                        <input type="number" id="total-days" name="total-days" placeholder="Enter Days">
+                    </div>
+                    <div class="input-field">
+                        <label for="total-persons">Total No of Persons:</label>
+                        <input type="number" id="total-persons" name="total-persons" placeholder="Enter number">
+                    </div>
+                    <div class="input-field">
+                        <label for="room-type">Room Type:</label>
+                        <select id="room-type" name="room-type">
+                            <option value="deluxe">Deluxe</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label>Amenities:</label>
+                        <div class="checkbox">
+                            <input type="checkbox" name="amenities" value="AC">
+                            <label>AC</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="amenities" value="Locker">
+                            <label>Locker</label>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="advance-amount">Advance Payment:</label>
+                        <input type="number" id="advance-amount" name="advance-amount">
+                    </div>
+                    <div class="input-field">
+                        <label for="total-cost">Total Amount:</label>
+                        <span id="total-cost" class="amount"></span>
+                    </div>
+                    <div class="form-button">
+                        <button type="button" onclick="calculateTotalCost()">Calculate</button>
+                        <button type="button" onclick="register()">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function calculateTotalCost() {
+
+            const roomRate = {
+                deluxe: 2500,
+                suite: 4000
+            };
+
+            const amenitiesRate = {
+                AC: 1000,
+                Locker: 300
+            };
+
+            const totalDays = parseInt(document.getElementById("total-days").value);
+            const totalPersons = parseInt(document.getElementById("total-persons").value);
+            const roomType = document.getElementById("room-type").value;
+            const amenities = Array.from(document.getElementsByName("amenities"))
+                .filter(input => input.checked)
+                .map(input => input.value);
+            const advanceAmount = parseInt(document.getElementById("advance-amount").value);
+
+            const roomCost = roomRate[roomType] * totalDays;
+            const amenitiesCost = amenities.reduce(
+                (total, amenity) => total + amenitiesRate[amenity],
+                0
+            );
+
+            const extraPersonCost = totalPersons > 2 ? (totalPersons - 2) * 1000 : 0;
+            const totalCost = roomCost + amenitiesCost + extraPersonCost;
+            const balance = totalCost - advanceAmount;
+
+            document.getElementById("total-cost").textContent = totalCost.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR"
+            });
+
+            alert("Calculation completed.\n\nRoom Cost: " + roomCost.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR"
+            }) + "\nAmenities Cost: " + amenitiesCost.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR"
+            }) + "\nExtra Person Cost: " + extraPersonCost.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR"
+            }) + "\nTotal Amount: " + totalCost.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR"
+            }) + "\nBalance: " + balance.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR"
+            }));
+        }
+        function register() {
+            alert("Registration successfullll..!");
+        }
+    </script>
+</body>
+
+</html>
