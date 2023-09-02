@@ -27,6 +27,15 @@ This project was created as a simple demonstration of an HTML registration form 
 
 This project is open-source and available under the [MIT License](LICENSE).
 
+## Main Page
+![screenshot1 png](https://github.com/dhanyamurthyk/DIGIBHEM/assets/143678915/6b6b4928-c3b0-47ae-ac0b-9f5b4fc3e5ba)
+
+## Page with details and total cost calculation
+![screenshot2 png](https://github.com/dhanyamurthyk/DIGIBHEM/assets/143678915/b64d8035-4f85-4c46-a590-624bfba78f22)
+
+## Page with registration sucessful message
+![screenshot3 png](https://github.com/dhanyamurthyk/DIGIBHEM/assets/143678915/88dfff14-ab88-4d70-b4e1-aea58311c3b0)
+
 
 
 
